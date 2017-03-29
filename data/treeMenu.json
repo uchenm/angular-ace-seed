@@ -1,0 +1,22 @@
+[
+  {
+    "title": "首页",
+    "state": "home",
+    "icon": "fa fa-tachometer"
+  },{
+    "title": "报表管理",
+    "icon": "fa fa-desktop",
+    "submenu":[
+      {
+        "title": "用户管理",
+        "state": "user.list",
+        "icon": "icon-double-angle-right"
+      },
+      {
+        "title": "报表管理",
+        "state": "report.list",
+        "icon": "icon-double-angle-right"
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+<ul class="nav nav-list">
+    <!--ng-class="{active: vm.selected===item, open: vm.opened===item}" -->
+    <li ng-repeat="item in vm.treeMenuItems" ng-include="'views/layouts/default/partial/sidebar/item.html'"
+        ng-class="{'open':item.submenu && vm.isSubOpen(item), 'active': vm.isActiveItem(item), 'hover': $parent.ace.settings.hover, 'highlight': $parent.ace.settings.highlight}"
+        ng-click="vm.active(item)">
+    </li>
+</ul>
+
