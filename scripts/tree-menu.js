@@ -1,7 +1,9 @@
 angular.module('rp',[]).component('treeMenu', {
     templateUrl: "views/layouts/default/partial/treemenu/tree-menu.html",
     bindings: {
-        data: '<'
+        data: '<',
+        hover:'<',
+        highlight:'<'
     },
     controller: ['$http', function ($http) {
         var vm = this;
