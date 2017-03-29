@@ -27,6 +27,6 @@
   
 <b class="arrow"></b>
   
-<ul class="submenu" ng-if="item.submenu" ng-attr-data-name="{{item.name}}">
-    <li ng-repeat="item in ::item.submenu" ng-include="'views/layouts/default/partial/sidebar/item.html'" ng-class="{'open':item.submenu && isSubOpen(item.name), 'active': isActiveItem(item.name), 'hover': $parent.ace.settings.hover}"></li>
+<ul class="submenu" ng-if="item.submenu" ng-attr-data-name="{{item.name}}" >
+    <li ng-repeat="item in ::item.submenu" ng-include="'views/layouts/default/partial/sidebar/item.html'" ng-class="{'open':item.submenu && vm.isSubOpen(item), 'active': vm.isActiveItem(item), 'hover': $parent.ace.settings.hover, 'highlight': $parent.ace.settings.highlight}"></li>
 </ul>

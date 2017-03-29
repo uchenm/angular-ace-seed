@@ -2,10 +2,15 @@
   {
     "title": "首页",
     "state": "home",
-    "icon": "fa fa-tachometer"
+    "icon": "fa fa-tachometer",
+    "tooltip":"home"
   },{
     "title": "报表管理",
     "icon": "fa fa-desktop",
+    "badge": "<i class=\"ace-icon fa fa-exclamation-triangle red bigger-130\"></i>",
+  "badge-class": "badge-transparent",
+  "tooltip": "2&nbsp;Important&nbsp;Events",
+  "tooltip-class": "tooltip-error",
     "submenu":[
       {
         "title": "用户管理",

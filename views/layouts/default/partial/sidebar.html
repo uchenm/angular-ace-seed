@@ -7,9 +7,7 @@
 <!--<div class="sidebar-toggle sidebar-collapse">		-->
   <!--<i class='ace-icon fa' ng-class="{'fa-angle-double-left': !ace.sidebar.minimized, 'fa-angle-double-right': ace.sidebar.minimized}"></i>-->
 <!--</div>-->
-<div id="sidebar"
-     ng-class="{'menu-min': ace.sidebar.minimized, 'sidebar-fixed': ace.settings.sidebar, 'compact': ace.settings.compact}"
-     oc-lazy-load="['views/layouts/default/partial/treemenu/tree-menu.html', 'scripts/tree-menu.js']">
+<div oc-lazy-load="['views/layouts/default/partial/treemenu/tree-menu.html', 'scripts/tree-menu.js']">
   <div class="sidebar-shortcuts" ng-include="'views/layouts/default/partial/sidebar/shortcuts.html'"></div>
   <tree-menu data="'data/treeMenu.json'"></tree-menu>
   <div class="sidebar-toggle sidebar-collapse">

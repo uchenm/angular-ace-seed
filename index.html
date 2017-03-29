@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="components/font-awesome/css/font-awesome.css"/>
 
-    <link rel="stylesheet" href="assets/css/ace-fonts.css"/>
     <link rel="stylesheet" href="assets/css/ace.css" id="main-ace-style"/>
+    <link rel="stylesheet" href="assets/css/ace-fonts.css"/>
     <link rel="stylesheet" href="assets/css/ace-skins.css">
 </head>
 <body ng-controller="MainCtrl" ng-class="bodySkin()">
@@ -18,8 +18,8 @@
 
 <div class="main-container" ng-class="{'container': ace.settings.container}">
 
-    <div id="sidebar" class="sidebar responsive" ng-controller="SidebarCtrl"
-         ng-class="{'menu-min': ace.sidebar.minimized, 'sidebar-fixed': ace.settings.sidebar, 'compact': ace.settings.compact}"
+    <div id="sidebar" class="sidebar responsive" ng-controller="SidebarCtrl" scroll="true" hover="true"
+         ng-class="{'menu-min': ace.sidebar.minimized, 'sidebar-fixed': ace.settings.sidebar, 'compact': ace.settings.compact,'hover':true}"
          ng-include="'views/layouts/default/partial/sidebar.html'"></div>
 
     <!--<div ng-include="'views/layouts/default/partial/sidebar.html'" ng-controller="SidebarCtrl"></div>-->

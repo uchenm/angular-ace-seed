@@ -227,6 +227,4 @@ angular.module('AceApp').controller('SidebarCtrl', function($scope) {
         $scope.ace.sidebar.minimized=!$scope.ace.sidebar.minimized;
     };
 
-
-
 });
