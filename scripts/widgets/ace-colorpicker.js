@@ -1,5 +1,7 @@
 (function () {
-    angular.module("aceColor", []);
+    angular.module("aceColor", [
+        'ui.bootstrap',['components/angular-bootstrap/ui-bootstrap.js','components/angular-bootstrap/ui-bootstrap-tpls.js']
+    ]);
 
     angular.module('aceColor').directive('aceColorpicker', function () {
         return {
