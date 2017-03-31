@@ -11,44 +11,16 @@
     <link rel="stylesheet" href="assets/css/ace.css" id="main-ace-style"/>
     <link rel="stylesheet" href="assets/css/ace-fonts.css"/>
     <link rel="stylesheet" href="assets/css/ace-skins.css">
+    <!--&lt;!&ndash;[if lte IE 9]>-->
+    <!--<link rel="stylesheet" href="assets/css/ace-part2.css" />-->
+    <!--<![endif]&ndash;&gt;-->
+    <!--<link rel="stylesheet" href="assets/css/ace-rtl.css" />-->
+    <!--&lt;!&ndash;[if lte IE 9]>-->
+    <!--<link rel="stylesheet" href="assets/css/ace-ie.css" />-->
+    <!--<![endif]&ndash;&gt;-->
 </head>
-<body ng-controller="MainCtrl" ng-class="bodySkin()">
-<div class="navbar navbar-default" ng-class="{'navbar-fixed-top': ace.settings.navbar}"
-     ng-include="'views/layouts/default/partial/navbar.html'"></div>
-
-<div class="main-container" ng-class="{'container': ace.settings.container}">
-
-    <div id="sidebar" class="sidebar responsive" ng-controller="SidebarCtrl" scroll="true" hover="true"
-         ng-class="{'menu-min': ace.sidebar.minimized, 'sidebar-fixed': ace.settings.sidebar, 'compact': ace.settings.compact,'hover':true}"
-         ng-include="'views/layouts/default/partial/sidebar.html'"></div>
-
-    <!--<div ng-include="'views/layouts/default/partial/sidebar.html'" ng-controller="SidebarCtrl"></div>-->
-
-    <div class="main-content">
-        <div class="main-content-inner">
-            <div class="breadcrumbs" ng-class="{'breadcrumbs-fixed': ace.settings.breadcrumbs}"
-                 ng-include="'views/layouts/default/partial/breadcrumbs.html'"></div>
-            <div class="page-content" >
-                <div class="ace-settings-container" ng-controller="SettingsCtrl"
-                     ng-include="'views/layouts/default/partial/settings.html'" ></div>
-                <ui-view ng-show="!viewContentLoading"></ui-view>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="footer" ng-include="'views/layouts/default/partial/footer.html'"></div>
-
-    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-    </a>
-
-</div>
-
-
-<div ng-show="viewContentLoading" class="ajax-loading-overlay ajax-overlay-body">
-    <i class="ajax-loading-icon fa fa-spin fa-spinner fa-2x orange"></i>
-</div>
+<body ng-controller="SettingsCtrl" ng-class="settings.bodySkin()" >
+    <ui-view></ui-view>
 
 <!--<script src="components/jquery/dist/jquery.min.js"></script>-->
 <script src="components/angular/angular.js"></script>

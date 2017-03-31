@@ -2,7 +2,7 @@
     "use strict";
     angular.module('LocalStorage', [{
         name:'LocalStorageModule',
-        files:['common/angular-local-storage.js']
+        files:['components/angular-local-storage/dist/angular-local-storage.js']
     }]);
 
     angular.module('LocalStorage')

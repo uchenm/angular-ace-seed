@@ -1,7 +1,7 @@
 <div oc-lazy-load="['views/layouts/default/partial/treemenu/tree-menu.html', 'scripts/widgets/tree-menu.js']">
   <div class="sidebar-shortcuts" ng-include="'views/layouts/default/partial/sidebar/shortcuts.html'"></div>
-  <tree-menu data="'data/treeMenu.json'" hover="ace.settings.hover" hightlight="ace.settings.highlight"></tree-menu>
+  <tree-menu data="'data/treeMenu.json'" hover="settings.ace.settings.hover" hightlight="settings.ace.settings.highlight"></tree-menu>
   <div class="sidebar-toggle sidebar-collapse">
-    <i class='ace-icon fa ' ng-class="{'fa-angle-double-left': !ace.sidebar.minimized, 'fa-angle-double-right': ace.sidebar.minimized}" ng-click="toggleSidebarMimimize()"></i>
+    <i class='ace-icon fa ' ng-class="{'fa-angle-double-left': !settings.ace.sidebar.minimized, 'fa-angle-double-right': settings.ace.sidebar.minimized}" ng-click="settings.toggleSidebarMimimize()"></i>
   </div>
 </div>
