@@ -115,7 +115,7 @@
         return vm;
     }]);
 
-    angular.module('AceApp').controller('SettingsCtrl', function ($scope, $rootScope,SettingService) {
+    angular.module('AceApp').controller('SettingsCtrl', function ($scope, $rootScope,SettingService,$http) {
         $scope.settings = SettingService;
 
         $scope.$watch('settings.ace.settings.compact', function (newValue) {
@@ -141,6 +141,42 @@
             //cfpLoadingBar.complete();
             $rootScope.viewContentLoading = false;
         });
+
+        $rootScope.appData = $rootScope.appData || {};
+        $rootScope.appDataRequest = {};
+        $rootScope.getData = function(dataName, type) {
+            var type = type || 'page';
+            var dataKey = null, dataPath = null;
+            if(type == 'page') {
+                var pageName = $location.path().match(/([\-a-z]+)$/)[0];
+                dataKey = 'page-'+pageName+'-'+dataName;
+                dataPath = 'data/pages/'+pageName+'/'+dataName+'.json';
+            }
+            else {
+                dataKey = type+'-'+dataName;
+                dataPath = 'data/'+type+'/'+dataName+'.json';
+            }
+
+            if (!dataPath) return;
+            if (dataKey in $rootScope.appData) return $rootScope.appData[dataKey];
+
+            if( !(dataKey in $rootScope.appData) && !(dataKey in $rootScope.appDataRequest) ) {
+                $rootScope.appDataRequest[dataKey] = true;
+
+                $http.get(dataPath).success(function(data) {
+                    $rootScope.appData[dataKey] = data;
+                });
+            }
+        };
+        $rootScope.getCommonData = function(dataName) {
+            return $rootScope.getData(dataName, 'common');
+        };
+
+
+
+        $scope.toggleMenuDisplay= function () {
+            $scope.settings.ace.sidebar.toggle=!$scope.settings.ace.sidebar.toggle;
+        }
     });
 
 })();
